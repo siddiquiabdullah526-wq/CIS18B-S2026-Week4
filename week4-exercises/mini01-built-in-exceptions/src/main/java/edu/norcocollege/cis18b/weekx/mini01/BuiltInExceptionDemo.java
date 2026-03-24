@@ -14,7 +14,7 @@ public class BuiltInExceptionDemo {
             System.out.println("Cannot divide by zero.");
         }
 
-        // Handle invalid array index
+        // handle invalid array index
         try {
             System.out.println(alerts[5]); // invalid index on purpose
         } catch (ArrayIndexOutOfBoundsException e) {
