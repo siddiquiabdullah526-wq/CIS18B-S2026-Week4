@@ -8,7 +8,11 @@ public class InMemoryAlertRepository implements AlertRepository {
 
     @Override
     public void save(Alert alert) throws AlertStorageException {
-        // TODO: Save the alert or simulate a failure.
+        try {
+            alerts.add(alert);
+        } catch (RuntimeException ex) {
+            throw new AlertStorageException("Failed to store alert.", ex);
+        }
     }
 
     public List<Alert> findAll() {
